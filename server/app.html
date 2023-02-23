@@ -9,12 +9,31 @@
 </head>
 
 <body>
-    <h1>This is testing purpose send html file from server to client side.</h1>
+    <h1 id="h_tag_for_client">This is testing purpose send html file from server to client side.</h1>
 
+    <input type="text" name="name" id="name">
+    <button onclick="handleSend()">send </button>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const socket = io()
+        const socket = io();
+
+        // socket.on("message", (data) => {
+        //     console.log(data);
+        // });
+        // socket.send("this is from client Side.")
+
+        // const handleSend = () => {
+        //     const name = document.getElementById("name").value;
+        //     console.log(name);
+        //     // socket.send(name)
+        //     socket.emit("testEvent", { name, phoe: "xioami phone" });
+
+        // }
+        socket.on("testingFebruary", (data) => {
+            console.log(data);
+            document.getElementById("h_tag_for_client").innerText = data;
+        })
     </script>
 </body>
 

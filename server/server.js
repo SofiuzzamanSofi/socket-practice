@@ -15,9 +15,20 @@ const io = new Server(httpServer);
 
 io.on("connection", (socket) => {
     console.log("event connected");
+
     socket.on("disconnect", (socket) => {
         console.log("event disconnected");
-    })
+    });
+
+    socket.send("this is from serverside.");
+
+    // socket.on("message", (data) => {
+    //     console.log(data);
+    // })
+    // socket.on("testEvent", (data) => {
+    //     console.log(data);
+    // })
+    io.sockets.emit("testingFebruary", "Oma go Ture Love")
 })
 
 
