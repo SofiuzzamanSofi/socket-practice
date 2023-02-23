@@ -8,6 +8,12 @@ const http = require("http");
 const server = http.createServer(app);
 
 
+
+
+
+app.get("/html", (req, res) => {
+    res.send(__dirname + "./app.html")
+})
 app.get("/", (req, res) => {
     res.send({
         success: true,
