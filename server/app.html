@@ -16,7 +16,7 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const socket = io();
+        const socket = io("/hockyworld");
 
         // socket.on("message", (data) => {
         //     console.log(data);
@@ -30,7 +30,11 @@
         //     socket.emit("testEvent", { name, phoe: "xioami phone" });
 
         // }
-        socket.on("testingFebruary", (data) => {
+        // socket.on("testingFebruary", (data) => {
+        //     console.log(data);
+        //     document.getElementById("h_tag_for_client").innerText = data;
+        // })
+        socket.on("hockyEvent", (data) => {
             console.log(data);
             document.getElementById("h_tag_for_client").innerText = data;
         })
