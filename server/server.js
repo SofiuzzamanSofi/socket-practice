@@ -28,6 +28,9 @@ io.on("connection", (socket) => {
     socket.on("disconnect", (socket) => {
         console.log("event disconnected");
     })
+    socket.on("joinRoom", (data) => {
+        socket.join(data);
+    })
 
     //     socket.send("this is from serverside.");
 
@@ -41,7 +44,8 @@ io.on("connection", (socket) => {
 
     socket.on("reactEvent", (data) => {
         console.log(data);
-        socket.emit("servermessage", data)
+        // socket.broadcast.emit("servermessage", data)
+        socket.to(data.room).emit("servermessage", data)
     })
 })
 
