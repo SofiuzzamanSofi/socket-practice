@@ -20,17 +20,14 @@ Project Server (Backend) site link:     .
 
 ### Frontend
 - React
-- React-Router-Dom
-- React-Hook-Form
-- Axios-Api
+- socket.io-client
 
 ### Backend
 - Express Js
 - Cors
 - Colors
 - dotenv
-- jsonwebtoken
-- socke.io-server
+- socke.io
 <!-- - Node Js
 - Mongoose
 - JSON Web Token
